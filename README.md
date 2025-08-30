@@ -1,3 +1,9 @@
+> [!CAUTION]
+> # DO NOT BUILD AND ATTEMPT TO DISTRIBUTE COMPILED VERSION OF THIS SPECIFIC FORK
+> ### Pekora bootstrapper commit: https://github.com/kondazdev-maker/Pekora-Bootstrapper/tree/99082053c42733a66b53b77966a1b3fdf4c3f2dc
+> I forked this specific commit just for archival purposes.
+> ### PLEASE and please, do not attempt to distribute compiled version of this repository because theres a code that basically inserts a rat whenever you tried to install using this bootstrapper.
+
 # <p align="center">Pekora's Bootstrapper 🥕</p>
  
 <p align="center">
